@@ -1,7 +1,9 @@
 package com.rewards.service;
 
+import com.rewards.dto.RewardsRequest;
 import com.rewards.model.Customer;
 import com.rewards.model.Transaction;
+import com.rewards.repository.CustomerRepository;
 import com.rewards.repository.TransactionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,10 +24,17 @@ public class RewardsServiceTest {
     @Mock
     private TransactionRepository transactionRepository;
 
+    @Mock
+    private CustomerRepository customerRepository;
+
+    @Mock
+    private RewardsRequest rewardsRequest;
+
+
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        rewardsService = new RewardsService(transactionRepository);
+        rewardsService = new RewardsService(transactionRepository,customerRepository);
     }
 
     @Test
@@ -44,7 +53,7 @@ public class RewardsServiceTest {
                 LocalDate.of(2024, 11, 30)
         )).thenReturn(transactions);
 
-        var results = rewardsService.calculateRewards();
+        var results = rewardsService.calculateRewards(rewardsRequest);
 
         assertEquals(2, results.size());
         assertEquals(90, results.get(0).getPoints()); // 120 -> 90 points

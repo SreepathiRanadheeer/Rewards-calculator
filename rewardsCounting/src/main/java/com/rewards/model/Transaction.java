@@ -25,4 +25,8 @@ public class Transaction {
         this.customer = customer;
     }
 
+    public Transaction(LocalDate transactionDate, double amount) {
+        this.transactionDate = transactionDate;
+        this.amount = amount;
+    }
 }
