@@ -23,7 +23,7 @@ Response:
 {
     "customerName":"Rana",
     "month": "OCTOBER",
-    "points": 120,
+    "points": 115,
     "transactions": [
     {
         "date": "2024-10-10",   
@@ -38,7 +38,7 @@ Response:
 {
 "customerName": "Sree",
 "month": "NOVEMBER",
-"points": 90,
+"points": 45,
 "transactions": [
     {
     "date": "2024-11-15",
@@ -57,11 +57,11 @@ Response:
     Response:
     {
     "customerName": "Sree",
-    "totalPoints": 210,
+    "totalPoints": 160,
     "monthlyRewards": [
     {
     "month": "OCTOBER",
-    "points": 120,
+    "points": 115,
     "transactions": [
     {
     "date": "2024-10-10",
@@ -70,12 +70,12 @@ Response:
     {
     "date": "2024-10-20",
     "amount": 75.0
-            }
+    }
     ]
     },
     {
     "month": "NOVEMBER",    
-    "points": 90,
+    "points": 45,
     "transactions": [
     {
     "date": "2024-11-15",
